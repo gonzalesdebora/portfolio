@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Debora Gonzales</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Pixel&family=VT323&family=Texturina:ital,opsz,wght@0,12..72,100..900;1,12..72,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+        <section class="top-image">
+            <figure>
+                <img src="../img/humboldt-y-las-americas/cover.png">
+            </figure>
+        </section>
+
+        <section class="container">
+            <div class="content">
+                <div class="text">
+                    <div class="empty"></div><div class="title">
+                        <div class="title-content">
+                            <h2>Humboldt y Las Américas</h2>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <div class="description-content">
+                            <h1>Humboldt250 Communications Campaign</h1>
+                            <p>Digital Design</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="content">
+                <div class="text">
+                    <div class="empty"></div><div class="title">
+                        <div class="title-content">
+                            <h2>Challenge</h2>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <div class="description-content">
+                            <p>The Goethe-Institut wanted to mark Alexander von Humboldt's 250th birthday with a year of events across Latin America and Germany, run by dozens of independent partners in over a dozen countries. The challenge was making it all feel like one project instead of a loose federation of local activities.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="content">
+                <div class="text">
+                    <div class="empty"></div><div class="title">
+                        <div class="title-content">
+                            <h2>Solution</h2>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <div class="description-content">
+                            <p>Building on the logo and main illustration from Gosto Studio, I built the campaign's editorial and creative system: a shared content calendar distributed to every partner, a #Humboldt250 hashtag strategy, and recurring editorial sections that gave the project a consistent rhythm. I designed and produced communications for each major sub-project — from the Experimenta SUR artist residency to the Conexión Humboldt youth contest — including social content, press releases, and printed materials, and managed press relationships across the region.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="content">
+                <div class="text">
+                    <div class="empty"></div><div class="title">
+                        <div class="title-content">
+                            <h2>Success</h2>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <div class="description-content">
+                            <p>The campaign reached roughly 294,000 attendees across 437 events in 15 countries, with social and web channels reaching over 3.5 million people combined. The @Humboldt250 Instagram account grew from zero to over 6,100 followers, and the #Humboldt250 hashtag drew more than 1,000 posts and a combined reach of about 4 million people across Instagram, Facebook, and Twitter.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <nav>
+            <button class="menu-toggle" type="button">MENU</button>
+        </nav>
+
+    <div id="fullscreen-menu" class="fullscreen-menu">
+        <div class="menu-content">
+            <a href="../index.html">Work</a>
+            <a href="../teaching.html">Teaching</a>
+            <a href="../publications.html">Publications</a>
+            <a href="../resume.html">Resume</a>
+        </div>
+        <button id="close-menu" class="close-menu" type="button">Close</button>
+    </div>
+
+    <script>
+        let toggleButton = document.querySelector('.menu-toggle');
+        let menu = document.getElementById('fullscreen-menu');
+        let closeButton = document.getElementById('close-menu');
+
+        function openMenu() {
+            menu.style.visibility = 'visible';
+            menu.style.opacity = '1';
+        }
+
+        function closeMenu() {
+            menu.style.visibility = 'hidden';
+            menu.style.opacity = '0';
+        }
+
+        toggleButton.addEventListener('click', openMenu);
+        closeButton.addEventListener('click', closeMenu);
+
+    </script>
+
+</body>
+
+</html>

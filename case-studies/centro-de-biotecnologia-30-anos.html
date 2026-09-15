@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Debora Gonzales</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Pixel&family=VT323&family=Texturina:ital,opsz,wght@0,12..72,100..900;1,12..72,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+        <section class="top-image">
+            <figure>
+                <img src="../img/centro-de-biotecnologia-30-anos/cover.png">
+            </figure>
+        </section>
+
+        <section class="container">
+            <div class="content">
+                <div class="text">
+                    <div class="empty"></div><div class="title">
+                        <div class="title-content">
+                            <h2>Centro de Biotecnologia 30 anos</h2>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <div class="description-content">
+                            <h1>Instituto Butantan, 1983–2013</h1>
+                            <p>Editorial Design</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="content">
+                <div class="text">
+                    <div class="empty"></div><div class="title">
+                        <div class="title-content">
+                            <h2>Challenge</h2>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <div class="description-content">
+                            <p>Marking 30 years of the Centro de Biotecnologia at Instituto Butantan meant turning three decades of dense scientific work — vaccines, biopharmaceuticals, genomics — into a printed piece that would still read as credible to the researchers it documented, while working as a keepsake for a wider audience.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="content">
+                <div class="text">
+                    <div class="empty"></div><div class="title">
+                        <div class="title-content">
+                            <h2>Solution</h2>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <div class="description-content">
+                            <p>A cover pairs a restrained serif logotype with a blurred field of journal text and a photograph of a lab vial, setting the tone for the book. Inside, each research area — Biofármacos, Genômica — opens on a teal band with a pull-quote and a boxed headline, then settles into a disciplined two-column grid of body text, captioned lab photography, and small-set bibliography. One divider spread breaks from the grid entirely: the word "associações" repeated across a letter grid, with a line traced through it like a data curve — pattern doing the work of an illustration.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="content">
+                <div class="text">
+                    <div class="empty"></div><div class="title">
+                        <div class="title-content">
+                            <h2>Success</h2>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <div class="description-content">
+                            <p>The finished book holds the rigor of an institutional record — citations, patent notes, captioned specimens — inside a consistent editorial system, so 30 years of research reads as a designed publication rather than a bound report.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <nav>
+            <button class="menu-toggle" type="button">MENU</button>
+        </nav>
+
+    <div id="fullscreen-menu" class="fullscreen-menu">
+        <div class="menu-content">
+            <a href="../index.html">Work</a>
+            <a href="../teaching.html">Teaching</a>
+            <a href="../publications.html">Publications</a>
+            <a href="../resume.html">Resume</a>
+        </div>
+        <button id="close-menu" class="close-menu" type="button">Close</button>
+    </div>
+
+    <script>
+        let toggleButton = document.querySelector('.menu-toggle');
+        let menu = document.getElementById('fullscreen-menu');
+        let closeButton = document.getElementById('close-menu');
+
+        function openMenu() {
+            menu.style.visibility = 'visible';
+            menu.style.opacity = '1';
+        }
+
+        function closeMenu() {
+            menu.style.visibility = 'hidden';
+            menu.style.opacity = '0';
+        }
+
+        toggleButton.addEventListener('click', openMenu);
+        closeButton.addEventListener('click', closeMenu);
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Debora Gonzales</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Pixel&family=VT323&family=Texturina:ital,opsz,wght@0,12..72,100..900;1,12..72,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+        <section class="top-image">
+            <figure>
+                <img src="../img/laboratorio-de-creacion/cover.png">
+            </figure>
+        </section>
+
+        <section class="container">
+            <div class="content">
+                <div class="text">
+                    <div class="empty"></div><div class="title">
+                        <div class="title-content">
+                            <h2>Laboratorio de Creación</h2>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <div class="description-content">
+                            <h1>Ebook for Early Childhood</h1>
+                            <p>Editorial Design</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="content">
+                <div class="text">
+                    <div class="empty"></div><div class="title">
+                        <div class="title-content">
+                            <h2>Challenge</h2>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <div class="description-content">
+                            <p>Girls meet the canon of art early — Picasso, Miró, Monet — but rarely see women artists, or an honest picture of what a woman's body, motherhood, or identity actually looks like. This design thesis for the Master's in Design at Universidad de los Andes set out to build an illustrated ebook for girls ages 3 to 5 that could offer that reference before school handed them the usual one.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="content">
+                <div class="text">
+                    <div class="empty"></div><div class="title">
+                        <div class="title-content">
+                            <h2>Solution</h2>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <div class="description-content">
+                            <p>The concept was grounded in research on five women artists — Louise Bourgeois, Rineke Dijkstra, Sophie Calle, Nan Goldin, and Adriana Tabalipa — whose work confronts motherhood, the body, and intimacy without polish. Their language shaped a book built through co-creation: women of all ages answered three questions ("What is being a woman to you?", "What is your body to you?", "What is makeup to you?") through an online survey, and those fragments of text were then illustrated by girls ages 3 to 5 in workshops, remixed with the author's own illustrations. The book was designed as a concrete-poetry exercise in the tradition of Arnaldo Antunes, with hyperlinked animations planned to set the words in motion, 360° photography for augmented-reality pages, and an original score commissioned from a Bogotá free-jazz quartet. It was built as an epub, readable on iPad, iPhone, Android, and Windows Phone, distributed by download link and by QR codes posted at the school.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="content">
+                <div class="text">
+                    <div class="empty"></div><div class="title">
+                        <div class="title-content">
+                            <h2>Success</h2>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <div class="description-content">
+                            <p>50 women had already responded to the survey by the time of writing, with the questionnaire open to women of any age or country. Illustration workshops were piloted with girls ages 3 to 5 at the Universidad de los Andes's jardín, with the model designed to scale to additional schools. As a design-thesis proposal, the project's success is documented in this concept and production plan rather than in post-launch usage data.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <nav>
+            <button class="menu-toggle" type="button">MENU</button>
+        </nav>
+
+    <div id="fullscreen-menu" class="fullscreen-menu">
+        <div class="menu-content">
+            <a href="../index.html">Work</a>
+            <a href="../teaching.html">Teaching</a>
+            <a href="../publications.html">Publications</a>
+            <a href="../resume.html">Resume</a>
+        </div>
+        <button id="close-menu" class="close-menu" type="button">Close</button>
+    </div>
+
+    <script>
+        let toggleButton = document.querySelector('.menu-toggle');
+        let menu = document.getElementById('fullscreen-menu');
+        let closeButton = document.getElementById('close-menu');
+
+        function openMenu() {
+            menu.style.visibility = 'visible';
+            menu.style.opacity = '1';
+        }
+
+        function closeMenu() {
+            menu.style.visibility = 'hidden';
+            menu.style.opacity = '0';
+        }
+
+        toggleButton.addEventListener('click', openMenu);
+        closeButton.addEventListener('click', closeMenu);
+
+    </script>
+
+</body>
+
+</html>

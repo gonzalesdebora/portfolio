@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Debora Gonzales</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Pixel&family=VT323&family=Texturina:ital,opsz,wght@0,12..72,100..900;1,12..72,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+        <section class="top-image">
+            <figure>
+                <img src="../img/processo-criativo/cover.png">
+            </figure>
+        </section>
+
+        <section class="container">
+            <div class="content">
+                <div class="text">
+                    <div class="empty"></div><div class="title">
+                        <div class="title-content">
+                            <h2>Processo Criativo</h2>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <div class="description-content">
+                            <h1>Processo Criativo</h1>
+                            <p>Editorial Design</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="content">
+                <div class="text">
+                    <div class="empty"></div><div class="title">
+                        <div class="title-content">
+                            <h2>Challenge</h2>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <div class="description-content">
+                            <p>A self-authored book exploring a single question: what to do with a drop of ink that falls on a sheet of paper. Rather than illustrate an answer, the challenge was to let typography itself perform the thinking — turning words like "pingo," "sombra," and "liberdade" into the very shapes and gestures they describe.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="content">
+                <div class="text">
+                    <div class="empty"></div><div class="title">
+                        <div class="title-content">
+                            <h2>Solution</h2>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <div class="description-content">
+                            <p>A red-cover, serif-titled volume in the same visual series as "A Escrita," it pairs a repeated opening line with pages that dissolve it into texture, letterforms that warp and drip, a scattered "g" arcing across black spreads, and a hand-built crossword of "associações." Type is the illustration throughout — no photography, just words bent, stacked, and set loose to trace ink, shadow, freedom, and construction.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="content">
+                <div class="text">
+                    <div class="empty"></div><div class="title">
+                        <div class="title-content">
+                            <h2>Success</h2>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <div class="description-content">
+                            <p>Completed as a self-authored publication, "Processo Criativo" stands as a personal record of experimenting with type as a medium for thinking through the creative process itself.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <nav>
+            <button class="menu-toggle" type="button">MENU</button>
+        </nav>
+
+    <div id="fullscreen-menu" class="fullscreen-menu">
+        <div class="menu-content">
+            <a href="../index.html">Work</a>
+            <a href="../teaching.html">Teaching</a>
+            <a href="../publications.html">Publications</a>
+            <a href="../resume.html">Resume</a>
+        </div>
+        <button id="close-menu" class="close-menu" type="button">Close</button>
+    </div>
+
+    <script>
+        let toggleButton = document.querySelector('.menu-toggle');
+        let menu = document.getElementById('fullscreen-menu');
+        let closeButton = document.getElementById('close-menu');
+
+        function openMenu() {
+            menu.style.visibility = 'visible';
+            menu.style.opacity = '1';
+        }
+
+        function closeMenu() {
+            menu.style.visibility = 'hidden';
+            menu.style.opacity = '0';
+        }
+
+        toggleButton.addEventListener('click', openMenu);
+        closeButton.addEventListener('click', closeMenu);
+
+    </script>
+
+</body>
+
+</html>

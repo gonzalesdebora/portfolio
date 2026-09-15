@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Debora Gonzales</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Geist+Pixel&family=VT323&family=Texturina:ital,opsz,wght@0,12..72,100..900;1,12..72,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+        <section class="top-image">
+            <figure>
+                <img src="img/approach/top-image.svg">
+            </figure>
+        </section>
+
+        <section class="container">
+            <div class="content">
+                <div class="text">
+                    <div class="empty"></div><div class="title">
+                        <div class="title-content">
+                            <h2>Approach</h2>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <div class="description-content">
+                            <p>My process starts with people, not mood boards. Whether that means thirty-six interviews across three Colombian cities for a wellness platform, five days in the field with local guides on San Andrés, or a survey and workshops with five-year-olds, the brief gets rewritten by what the research actually turns up — not by what I assumed going in.</p>
+                            <p>From there the work becomes systems, not single objects. A packaging line has to hold across four formats and five SKUs; an identity has to survive a school's uniforms, newsletters, and signage for ten years; a campaign has to feel coherent across fifteen countries and dozens of independent partners. I build the shared rule — a sign, a grid, a palette, a content calendar — before I let it multiply.</p>
+                            <p>I prototype with my hands as much as with a mouse: hand-cut storyboards before a browser build, mockups pinned to a t-shirt before a client signs off, cut paper before vector art. And when a project is personal or academic rather than commercial, I say so plainly — some of my favorite work here has no usage metrics attached, because the win was shipping it, not growing it.</p>
+                            <p>I also work well inside constraints I didn't set — a lost technical lead, a fixed opening date, a ten-person team spanning four disciplines. Rigor keeps a project honest; craft is what makes people want to stop and read it.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <nav>
+            <button class="menu-toggle" type="button">Open</button>
+        </nav>
+
+    <div id="fullscreen-menu" class="fullscreen-menu">
+        <div class="menu-content">
+            <a href="index.html">Work</a>
+            <a href="approach.html">Approach</a>
+            <a href="resume.html">Resume</a>
+        </div>
+        <button id="close-menu" class="close-menu" type="button">Close</button>
+    </div>
+
+    <footer>
+
+     <div id="footer-menu" class="footer-menu">
+        <div class="footer-content">
+            <ul>
+                <li><a href="index.html">Work</a></li>
+                <li><a href="approach.html">Approach</a></li>
+                <li><a href="resume.html">Resume</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-social">
+         <p>Linkedin</p>
+        <a href="https://www.linkedin.com/in/gonzalesdebora/" target="_blank">in/gonzalesdebora</a>
+    </div>
+    <div class="footer-email">
+        <p>Email</p>
+        <a href="mailto:gonzalesdebora@gmail.com">gonzalesdebora@gmail.com</a>
+        </div>
+    </footer>
+
+    <script>
+        let toggleButton = document.querySelector('.menu-toggle');
+        let menu = document.getElementById('fullscreen-menu');
+        let closeButton = document.getElementById('close-menu');
+
+        function openMenu() {
+            menu.style.visibility = 'visible';
+            menu.style.opacity = '1';
+        }
+
+        function closeMenu() {
+            menu.style.visibility = 'hidden';
+            menu.style.opacity = '0';
+        }
+
+        toggleButton.addEventListener('click', openMenu);
+        closeButton.addEventListener('click', closeMenu);
+
+    </script>
+
+</body>
+
+</html>
