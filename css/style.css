@@ -47,6 +47,24 @@ h2 {
     margin: 0px;
 }
 
+/* Looks exactly like the h1 rule above. Used on text that should be styled
+   big but isn't actually the page's main heading (like the homepage bio). */
+.looks-like-h1 {
+    font-size: 32px;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    margin: 0px;
+}
+
+/* Looks exactly like the h2 rule above. Used on the homepage name, which
+   needs to be the real <h1> for SEO but should still look small. */
+.looks-like-h2 {
+    font-size: 16px;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    margin: 0px;
+}
+
 p {
     font-size: 16px;
     font-optical-sizing: auto;
@@ -225,7 +243,8 @@ section.container {
         width: 66.6666666667%;
     }
 
-    h1 {
+    h1,
+    .looks-like-h1 {
         font-size: 22px;
     }
 }
