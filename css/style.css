@@ -88,6 +88,12 @@ a {
     text-decoration: none;
 }
 
+/* Browsers turn links blue/purple on their own once they've been clicked.
+   This keeps visited links the same black as regular text. */
+a:visited {
+    color: inherit;
+}
+
 a:hover {
     text-decoration: underline;
     text-decoration-style: wavy;
@@ -240,12 +246,25 @@ section.container {
     }
 
     .content .text .title {
-        width: 66.6666666667%;
+        width: 100%;
+    }
+
+    /* On desktop this box is only 60% wide to sit next to other columns.
+       On mobile everything stacks in one column, so let it use the full width. */
+    .content .text .description .description-content {
+        width: 100%;
     }
 
     h1,
     .looks-like-h1 {
         font-size: 22px;
+    }
+
+    /* This negative margin shifts the filter buttons left to line up with
+       text next to them on desktop. On mobile there's nothing beside them,
+       so remove it or the buttons get pushed off to the left. */
+    .gallery-buttons {
+        margin-left: 0;
     }
 }
 
