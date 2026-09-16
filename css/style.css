@@ -16,6 +16,21 @@ body {
     background: #ffffff;
     color: #000000;
     font-family: 'Texturina';
+
+    scrollbar-width: auto;
+    scrollbar-color: #00B0F5 #ffffff;
+}
+
+::-webkit-scrollbar {
+    width: 16px;
+}
+
+::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #00B0F5;
 }
 
 h1 {
@@ -208,6 +223,10 @@ section.container {
 
     .content .text .title {
         width: 66.6666666667%;
+    }
+
+    h1 {
+        font-size: 22px;
     }
 }
 

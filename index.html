@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Debora Gonzales</title>
+    <title>Debora Falleiros Gonzales</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="img/cursor-link.svg">
 
@@ -64,7 +64,7 @@
                     <div class="description">
                         <div class="description-content">
                             <h1>
-I am a Senior Product Designer with a background in marketing and visual communication. My expertise lies in creating user-centric products that solve wicked problems and generate fun and positive impact. Currently, I work in the digital transformation industry, focusing on innovative solutions for global clients and start-ups. I hold a master's degree in design, specializing in social innovation, new technologies, and creative ecosystems. Fluent in multiple languages, I thrive on learning from different cultures and getting to know people.</h1> 
+With 15+ years of experience, I've designed products and brands for clients spanning fintech, culture, and education. I use sharp research, playful craft, and hands-on making to turn complex problems into work people actually want to use.</h1> 
                         </div>
                     </div>
                 </div>
@@ -228,7 +228,7 @@ I am a Senior Product Designer with a background in marketing and visual communi
                     <p>2022</p>
                 </div>
                 <div class="project-type">
-                    <p>UX/UI Design</p>
+                    <p>UX Design</p>
                 </div>
             </div>
         </a>
@@ -300,7 +300,7 @@ I am a Senior Product Designer with a background in marketing and visual communi
                     <p>2020</p>
                 </div>
                 <div class="project-type">
-                    <p>UX Research</p>
+                    <p>UX Design</p>
                 </div>
             </div>
         </a>
@@ -318,7 +318,7 @@ I am a Senior Product Designer with a background in marketing and visual communi
                     <p>2019</p>
                 </div>
                 <div class="project-type">
-                    <p>Digital Design</p>
+                    <p>Visual Identity</p>
                 </div>
             </div>
         </a>
@@ -336,7 +336,7 @@ I am a Senior Product Designer with a background in marketing and visual communi
                     <p>2019</p>
                 </div>
                 <div class="project-type">
-                    <p>Interactive Editorial Design</p>
+                    <p>Publication</p>
                 </div>
             </div>
         </a>
@@ -354,7 +354,7 @@ I am a Senior Product Designer with a background in marketing and visual communi
                     <p>2019</p>
                 </div>
                 <div class="project-type">
-                    <p>Publications</p>
+                    <p>Publication</p>
                 </div>
             </div>
         </a>
@@ -841,161 +841,206 @@ I am a Senior Product Designer with a background in marketing and visual communi
         toggleButton.addEventListener('click', openMenu);
         closeButton.addEventListener('click', closeMenu);
 
+        function getThumbnailsByCategory(category) {
+            return Array.from(document.querySelectorAll('.gallery-thumbnails .thumbnail')).filter(function(thumb) {
+                let typeEl = thumb.querySelector('.project-type p');
+                return typeEl && typeEl.textContent.trim() === category;
+            });
+        }
+
         function strikethroughOne() {
             filterOne.style['text-decoration-line'] = 'line-through';
             filterOne.removeEventListener('click', strikethroughOne);
             filterOne.addEventListener('click', resetOne);
+            getThumbnailsByCategory('UX Design').forEach(t => t.style.display = 'none');
         }
 
         let resetOne = function() {
             filterOne.style['text-decoration-line'] = 'none';
             filterOne.removeEventListener('click', resetOne);
             filterOne.addEventListener('click', strikethroughOne);
+            getThumbnailsByCategory('UX Design').forEach(t => t.style.display = 'block');
         };
 
         function strikethroughTwo() {
             filterTwo.style['text-decoration-line'] = 'line-through';
             filterTwo.removeEventListener('click', strikethroughTwo);
             filterTwo.addEventListener('click', resetTwo);
+            getThumbnailsByCategory('Branding').forEach(t => t.style.display = 'none');
         }
 
         let resetTwo = function() {
             filterTwo.style['text-decoration-line'] = 'none';
             filterTwo.removeEventListener('click', resetTwo);
             filterTwo.addEventListener('click', strikethroughTwo);
+            getThumbnailsByCategory('Branding').forEach(t => t.style.display = 'block');
         };
 
         function strikethroughThree() {
             filterThree.style['text-decoration-line'] = 'line-through';
             filterThree.removeEventListener('click', strikethroughThree);
             filterThree.addEventListener('click', resetThree);
+            getThumbnailsByCategory('Visual Identity').forEach(t => t.style.display = 'none');
         }
 
         let resetThree = function() {
             filterThree.style['text-decoration-line'] = 'none';
             filterThree.removeEventListener('click', resetThree);
             filterThree.addEventListener('click', strikethroughThree);
+            getThumbnailsByCategory('Visual Identity').forEach(t => t.style.display = 'block');
         };
 
         function strikethroughFour() {
             filterFour.style['text-decoration-line'] = 'line-through';
             filterFour.removeEventListener('click', strikethroughFour);
             filterFour.addEventListener('click', resetFour);
+            getThumbnailsByCategory('Interaction Design').forEach(t => t.style.display = 'none');
         }
 
         let resetFour = function() {
             filterFour.style['text-decoration-line'] = 'none';
             filterFour.removeEventListener('click', resetFour);
             filterFour.addEventListener('click', strikethroughFour);
+            getThumbnailsByCategory('Interaction Design').forEach(t => t.style.display = 'block');
         };
 
         function strikethroughFive() {
             filterFive.style['text-decoration-line'] = 'line-through';
             filterFive.removeEventListener('click', strikethroughFive);
             filterFive.addEventListener('click', resetFive);
+            getThumbnailsByCategory('Editorial Design').forEach(t => t.style.display = 'none');
         }
 
         let resetFive = function() {
             filterFive.style['text-decoration-line'] = 'none';
             filterFive.removeEventListener('click', resetFive);
             filterFive.addEventListener('click', strikethroughFive);
+            getThumbnailsByCategory('Editorial Design').forEach(t => t.style.display = 'block');
         };
 
         function strikethroughSix() {
             filterSix.style['text-decoration-line'] = 'line-through';
             filterSix.removeEventListener('click', strikethroughSix);
             filterSix.addEventListener('click', resetSix);
+            getThumbnailsByCategory('Publication').forEach(t => t.style.display = 'none');
         }
 
         let resetSix = function() {
             filterSix.style['text-decoration-line'] = 'none';
             filterSix.removeEventListener('click', resetSix);
             filterSix.addEventListener('click', strikethroughSix);
+            getThumbnailsByCategory('Publication').forEach(t => t.style.display = 'block');
         };
 
         function strikethroughSeven() {
             filterSeven.style['text-decoration-line'] = 'line-through';
             filterSeven.removeEventListener('click', strikethroughSeven);
             filterSeven.addEventListener('click', resetSeven);
+            getThumbnailsByCategory('Poster Design').forEach(t => t.style.display = 'none');
         }
 
         let resetSeven = function() {
             filterSeven.style['text-decoration-line'] = 'none';
             filterSeven.removeEventListener('click', resetSeven);
             filterSeven.addEventListener('click', strikethroughSeven);
+            getThumbnailsByCategory('Poster Design').forEach(t => t.style.display = 'block');
         };
 
         function strikethroughEight() {
             filterEight.style['text-decoration-line'] = 'line-through';
             filterEight.removeEventListener('click', strikethroughEight);
             filterEight.addEventListener('click', resetEight);
+            getThumbnailsByCategory('Packaging Design').forEach(t => t.style.display = 'none');
         }
 
         let resetEight = function() {
             filterEight.style['text-decoration-line'] = 'none';
             filterEight.removeEventListener('click', resetEight);
             filterEight.addEventListener('click', strikethroughEight);
+            getThumbnailsByCategory('Packaging Design').forEach(t => t.style.display = 'block');
         };
 
         function strikethroughNine() {
             filterNine.style['text-decoration-line'] = 'line-through';
             filterNine.removeEventListener('click', strikethroughNine);
             filterNine.addEventListener('click', resetNine);
+            getThumbnailsByCategory('Industrial Design').forEach(t => t.style.display = 'none');
         }
 
         let resetNine = function() {
             filterNine.style['text-decoration-line'] = 'none';
             filterNine.removeEventListener('click', resetNine);
             filterNine.addEventListener('click', strikethroughNine);
+            getThumbnailsByCategory('Industrial Design').forEach(t => t.style.display = 'block');
         };
 
         function strikethroughTen() {
             filterTen.style['text-decoration-line'] = 'line-through';
             filterTen.removeEventListener('click', strikethroughTen);
             filterTen.addEventListener('click', resetTen);
+            getThumbnailsByCategory('Teaching').forEach(t => t.style.display = 'none');
         }
 
         let resetTen = function() {
             filterTen.style['text-decoration-line'] = 'none';
             filterTen.removeEventListener('click', resetTen);
             filterTen.addEventListener('click', strikethroughTen);
+            getThumbnailsByCategory('Teaching').forEach(t => t.style.display = 'block');
         };
 
         function strikethroughEleven() {
             filterEleven.style['text-decoration-line'] = 'line-through';
             filterEleven.removeEventListener('click', strikethroughEleven);
             filterEleven.addEventListener('click', resetEleven);
+            getThumbnailsByCategory('Illustration').forEach(t => t.style.display = 'none');
         }
 
         let resetEleven = function() {
             filterEleven.style['text-decoration-line'] = 'none';
             filterEleven.removeEventListener('click', resetEleven);
             filterEleven.addEventListener('click', strikethroughEleven);
+            getThumbnailsByCategory('Illustration').forEach(t => t.style.display = 'block');
         };
 
         function strikethroughTwelve() {
             filterTwelve.style['text-decoration-line'] = 'line-through';
             filterTwelve.removeEventListener('click', strikethroughTwelve);
             filterTwelve.addEventListener('click', resetTwelve);
+            getThumbnailsByCategory('Advertising').forEach(t => t.style.display = 'none');
         }
 
         let resetTwelve = function() {
             filterTwelve.style['text-decoration-line'] = 'none';
             filterTwelve.removeEventListener('click', resetTwelve);
             filterTwelve.addEventListener('click', strikethroughTwelve);
+            getThumbnailsByCategory('Advertising').forEach(t => t.style.display = 'block');
         };
 
-        function strikethroughThirteen() {
-            filterThirteen.style['text-decoration-line'] = 'line-through';
-            filterThirteen.removeEventListener('click', strikethroughThirteen);
-            filterThirteen.addEventListener('click', resetThirteen);
+        function showAllProjects() {
+            document.querySelectorAll('.gallery-thumbnails .thumbnail').forEach(t => t.style.display = 'block');
+
+            let filters = [
+                { btn: filterOne, strike: strikethroughOne, reset: resetOne },
+                { btn: filterTwo, strike: strikethroughTwo, reset: resetTwo },
+                { btn: filterThree, strike: strikethroughThree, reset: resetThree },
+                { btn: filterFour, strike: strikethroughFour, reset: resetFour },
+                { btn: filterFive, strike: strikethroughFive, reset: resetFive },
+                { btn: filterSix, strike: strikethroughSix, reset: resetSix },
+                { btn: filterSeven, strike: strikethroughSeven, reset: resetSeven },
+                { btn: filterEight, strike: strikethroughEight, reset: resetEight },
+                { btn: filterNine, strike: strikethroughNine, reset: resetNine },
+                { btn: filterTen, strike: strikethroughTen, reset: resetTen },
+                { btn: filterEleven, strike: strikethroughEleven, reset: resetEleven },
+                { btn: filterTwelve, strike: strikethroughTwelve, reset: resetTwelve }
+            ];
+
+            filters.forEach(function(f) {
+                f.btn.style['text-decoration-line'] = 'none';
+                f.btn.removeEventListener('click', f.reset);
+                f.btn.removeEventListener('click', f.strike);
+                f.btn.addEventListener('click', f.strike);
+            });
         }
-
-        let resetThirteen = function() {
-            filterThirteen.style['text-decoration-line'] = 'none';
-            filterThirteen.removeEventListener('click', resetThirteen);
-            filterThirteen.addEventListener('click', strikethroughThirteen);
-        };
 
         filterOne.addEventListener('click', strikethroughOne);
         filterTwo.addEventListener('click', strikethroughTwo);
@@ -1009,7 +1054,7 @@ I am a Senior Product Designer with a background in marketing and visual communi
         filterTen.addEventListener('click', strikethroughTen);
         filterEleven.addEventListener('click', strikethroughEleven);
         filterTwelve.addEventListener('click', strikethroughTwelve);
-        filterThirteen.addEventListener('click', strikethroughThirteen);
+        filterThirteen.addEventListener('click', showAllProjects);
 
     </script>
 
