@@ -94,9 +94,13 @@ a:visited {
     color: inherit;
 }
 
+/* text-underline-offset and text-decoration-thickness give the wavy line
+   more room, so it doesn't look cramped and jagged in Chrome. */
 a:hover {
     text-decoration: underline;
     text-decoration-style: wavy;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
 }
 
 figure {
@@ -369,6 +373,10 @@ button:hover {
 .menu-content a:hover {
     text-decoration: underline;
     text-decoration-style: wavy;
+    text-underline-offset: 3px;
+    /* Thicker than the other wavy underlines since this text is much
+       bigger (60px), so a 1px line would look too thin next to it. */
+    text-decoration-thickness: 3px;
 }
 
 
@@ -468,6 +476,8 @@ footer a {
 footer a:hover {
     text-decoration: underline;
     text-decoration-style: wavy;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
 }
 
 @media (max-width: 768px) {
