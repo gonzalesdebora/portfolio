@@ -108,17 +108,11 @@ With 15+ years of experience, I've designed products and brands for clients span
                         <div class="description-content">
     <div class="gallery-buttons">
         <button class="filter" type="filter" id="ux-design">UX Design</button>
-        <button class="filter" type="filter" id="branding">Branding</button>
-        <button class="filter" type="filter" id="visual-identity">Visual Identity</button>
-        <button class="filter" type="filter" id="interaction-design">Interaction Design</button>
-        <button class="filter" type="filter" id="editorial-design">Editorial Design</button>
-        <button class="filter" type="filter" id="publication">Publication</button>
-        <button class="filter" type="filter" id="poster-design">Poster Design</button>
-        <button class="filter" type="filter" id="packaging-design">Packaging Design</button>
-        <button class="filter" type="filter" id="industrial-design">Industrial Design</button>
+        <button class="filter" type="filter" id="graphic-design">Graphic Design</button>
         <button class="filter" type="filter" id="teaching">Teaching</button>
-        <button class="filter" type="filter" id="illustration">Illustration</button>
-        <button class="filter" type="filter" id="advertising">Advertising</button>
+        <button class="filter" type="filter" id="publications">Publications</button>
+        <button class="filter" type="filter" id="interaction-design">Interaction Design</button>
+        <button class="filter" type="filter" id="industrial-design">Industrial Design</button>
         <button class="filter" type="filter" id="all-filter">All</button>
     </div>
                         </div>
@@ -836,19 +830,6 @@ With 15+ years of experience, I've designed products and brands for clients span
         let toggleButton = document.querySelector('.menu-toggle');
         let menu = document.getElementById('fullscreen-menu');
         let closeButton = document.getElementById('close-menu');
-        let filterOne = document.getElementById('ux-design');
-        let filterTwo = document.getElementById('branding');
-        let filterThree = document.getElementById('visual-identity');
-        let filterFour = document.getElementById('interaction-design');
-        let filterFive = document.getElementById('editorial-design');
-        let filterSix = document.getElementById('publication');
-        let filterSeven = document.getElementById('poster-design');
-        let filterEight = document.getElementById('packaging-design');
-        let filterNine = document.getElementById('industrial-design');
-        let filterTen = document.getElementById('teaching');
-        let filterEleven = document.getElementById('illustration');
-        let filterTwelve = document.getElementById('advertising');
-        let filterThirteen = document.getElementById('all-filter');
 
         function openMenu() {
             menu.style.visibility = 'visible';
@@ -863,220 +844,59 @@ With 15+ years of experience, I've designed products and brands for clients span
         toggleButton.addEventListener('click', openMenu);
         closeButton.addEventListener('click', closeMenu);
 
-        function getThumbnailsByCategory(category) {
+        // Finds every thumbnail whose type matches one of the given category
+        // names. "Graphic Design" lists several older, more specific types
+        // here so one filter button can cover all of them at once.
+        function getThumbnailsByCategories(categories) {
             return Array.from(document.querySelectorAll('.gallery-thumbnails .thumbnail')).filter(function(thumb) {
                 let typeEl = thumb.querySelector('.project-type p');
-                return typeEl && typeEl.textContent.trim() === category;
+                return typeEl && categories.includes(typeEl.textContent.trim());
             });
         }
 
-        function strikethroughOne() {
-            filterOne.style['text-decoration-line'] = 'line-through';
-            filterOne.removeEventListener('click', strikethroughOne);
-            filterOne.addEventListener('click', resetOne);
-            getThumbnailsByCategory('UX Design').forEach(t => t.style.display = 'none');
-        }
+        let filters = [
+            { id: 'ux-design', categories: ['UX Design'] },
+            { id: 'graphic-design', categories: ['Editorial Design', 'Illustration', 'Visual Identity', 'Poster Design', 'Packaging Design', 'Branding', 'Advertising'] },
+            { id: 'teaching', categories: ['Teaching'] },
+            { id: 'publications', categories: ['Publication'] },
+            { id: 'interaction-design', categories: ['Interaction Design'] },
+            { id: 'industrial-design', categories: ['Industrial Design'] }
+        ];
 
-        let resetOne = function() {
-            filterOne.style['text-decoration-line'] = 'none';
-            filterOne.removeEventListener('click', resetOne);
-            filterOne.addEventListener('click', strikethroughOne);
-            getThumbnailsByCategory('UX Design').forEach(t => t.style.display = 'block');
-        };
+        // Set up each filter button so the first click hides its projects
+        // (shown as a strikethrough), and the second click brings them back.
+        filters.forEach(function(filter) {
+            filter.button = document.getElementById(filter.id);
 
-        function strikethroughTwo() {
-            filterTwo.style['text-decoration-line'] = 'line-through';
-            filterTwo.removeEventListener('click', strikethroughTwo);
-            filterTwo.addEventListener('click', resetTwo);
-            getThumbnailsByCategory('Branding').forEach(t => t.style.display = 'none');
-        }
+            filter.hide = function() {
+                filter.button.style['text-decoration-line'] = 'line-through';
+                filter.button.removeEventListener('click', filter.hide);
+                filter.button.addEventListener('click', filter.show);
+                getThumbnailsByCategories(filter.categories).forEach(t => t.style.display = 'none');
+            };
 
-        let resetTwo = function() {
-            filterTwo.style['text-decoration-line'] = 'none';
-            filterTwo.removeEventListener('click', resetTwo);
-            filterTwo.addEventListener('click', strikethroughTwo);
-            getThumbnailsByCategory('Branding').forEach(t => t.style.display = 'block');
-        };
+            filter.show = function() {
+                filter.button.style['text-decoration-line'] = 'none';
+                filter.button.removeEventListener('click', filter.show);
+                filter.button.addEventListener('click', filter.hide);
+                getThumbnailsByCategories(filter.categories).forEach(t => t.style.display = 'block');
+            };
 
-        function strikethroughThree() {
-            filterThree.style['text-decoration-line'] = 'line-through';
-            filterThree.removeEventListener('click', strikethroughThree);
-            filterThree.addEventListener('click', resetThree);
-            getThumbnailsByCategory('Visual Identity').forEach(t => t.style.display = 'none');
-        }
-
-        let resetThree = function() {
-            filterThree.style['text-decoration-line'] = 'none';
-            filterThree.removeEventListener('click', resetThree);
-            filterThree.addEventListener('click', strikethroughThree);
-            getThumbnailsByCategory('Visual Identity').forEach(t => t.style.display = 'block');
-        };
-
-        function strikethroughFour() {
-            filterFour.style['text-decoration-line'] = 'line-through';
-            filterFour.removeEventListener('click', strikethroughFour);
-            filterFour.addEventListener('click', resetFour);
-            getThumbnailsByCategory('Interaction Design').forEach(t => t.style.display = 'none');
-        }
-
-        let resetFour = function() {
-            filterFour.style['text-decoration-line'] = 'none';
-            filterFour.removeEventListener('click', resetFour);
-            filterFour.addEventListener('click', strikethroughFour);
-            getThumbnailsByCategory('Interaction Design').forEach(t => t.style.display = 'block');
-        };
-
-        function strikethroughFive() {
-            filterFive.style['text-decoration-line'] = 'line-through';
-            filterFive.removeEventListener('click', strikethroughFive);
-            filterFive.addEventListener('click', resetFive);
-            getThumbnailsByCategory('Editorial Design').forEach(t => t.style.display = 'none');
-        }
-
-        let resetFive = function() {
-            filterFive.style['text-decoration-line'] = 'none';
-            filterFive.removeEventListener('click', resetFive);
-            filterFive.addEventListener('click', strikethroughFive);
-            getThumbnailsByCategory('Editorial Design').forEach(t => t.style.display = 'block');
-        };
-
-        function strikethroughSix() {
-            filterSix.style['text-decoration-line'] = 'line-through';
-            filterSix.removeEventListener('click', strikethroughSix);
-            filterSix.addEventListener('click', resetSix);
-            getThumbnailsByCategory('Publication').forEach(t => t.style.display = 'none');
-        }
-
-        let resetSix = function() {
-            filterSix.style['text-decoration-line'] = 'none';
-            filterSix.removeEventListener('click', resetSix);
-            filterSix.addEventListener('click', strikethroughSix);
-            getThumbnailsByCategory('Publication').forEach(t => t.style.display = 'block');
-        };
-
-        function strikethroughSeven() {
-            filterSeven.style['text-decoration-line'] = 'line-through';
-            filterSeven.removeEventListener('click', strikethroughSeven);
-            filterSeven.addEventListener('click', resetSeven);
-            getThumbnailsByCategory('Poster Design').forEach(t => t.style.display = 'none');
-        }
-
-        let resetSeven = function() {
-            filterSeven.style['text-decoration-line'] = 'none';
-            filterSeven.removeEventListener('click', resetSeven);
-            filterSeven.addEventListener('click', strikethroughSeven);
-            getThumbnailsByCategory('Poster Design').forEach(t => t.style.display = 'block');
-        };
-
-        function strikethroughEight() {
-            filterEight.style['text-decoration-line'] = 'line-through';
-            filterEight.removeEventListener('click', strikethroughEight);
-            filterEight.addEventListener('click', resetEight);
-            getThumbnailsByCategory('Packaging Design').forEach(t => t.style.display = 'none');
-        }
-
-        let resetEight = function() {
-            filterEight.style['text-decoration-line'] = 'none';
-            filterEight.removeEventListener('click', resetEight);
-            filterEight.addEventListener('click', strikethroughEight);
-            getThumbnailsByCategory('Packaging Design').forEach(t => t.style.display = 'block');
-        };
-
-        function strikethroughNine() {
-            filterNine.style['text-decoration-line'] = 'line-through';
-            filterNine.removeEventListener('click', strikethroughNine);
-            filterNine.addEventListener('click', resetNine);
-            getThumbnailsByCategory('Industrial Design').forEach(t => t.style.display = 'none');
-        }
-
-        let resetNine = function() {
-            filterNine.style['text-decoration-line'] = 'none';
-            filterNine.removeEventListener('click', resetNine);
-            filterNine.addEventListener('click', strikethroughNine);
-            getThumbnailsByCategory('Industrial Design').forEach(t => t.style.display = 'block');
-        };
-
-        function strikethroughTen() {
-            filterTen.style['text-decoration-line'] = 'line-through';
-            filterTen.removeEventListener('click', strikethroughTen);
-            filterTen.addEventListener('click', resetTen);
-            getThumbnailsByCategory('Teaching').forEach(t => t.style.display = 'none');
-        }
-
-        let resetTen = function() {
-            filterTen.style['text-decoration-line'] = 'none';
-            filterTen.removeEventListener('click', resetTen);
-            filterTen.addEventListener('click', strikethroughTen);
-            getThumbnailsByCategory('Teaching').forEach(t => t.style.display = 'block');
-        };
-
-        function strikethroughEleven() {
-            filterEleven.style['text-decoration-line'] = 'line-through';
-            filterEleven.removeEventListener('click', strikethroughEleven);
-            filterEleven.addEventListener('click', resetEleven);
-            getThumbnailsByCategory('Illustration').forEach(t => t.style.display = 'none');
-        }
-
-        let resetEleven = function() {
-            filterEleven.style['text-decoration-line'] = 'none';
-            filterEleven.removeEventListener('click', resetEleven);
-            filterEleven.addEventListener('click', strikethroughEleven);
-            getThumbnailsByCategory('Illustration').forEach(t => t.style.display = 'block');
-        };
-
-        function strikethroughTwelve() {
-            filterTwelve.style['text-decoration-line'] = 'line-through';
-            filterTwelve.removeEventListener('click', strikethroughTwelve);
-            filterTwelve.addEventListener('click', resetTwelve);
-            getThumbnailsByCategory('Advertising').forEach(t => t.style.display = 'none');
-        }
-
-        let resetTwelve = function() {
-            filterTwelve.style['text-decoration-line'] = 'none';
-            filterTwelve.removeEventListener('click', resetTwelve);
-            filterTwelve.addEventListener('click', strikethroughTwelve);
-            getThumbnailsByCategory('Advertising').forEach(t => t.style.display = 'block');
-        };
+            filter.button.addEventListener('click', filter.hide);
+        });
 
         function showAllProjects() {
             document.querySelectorAll('.gallery-thumbnails .thumbnail').forEach(t => t.style.display = 'block');
 
-            let filters = [
-                { btn: filterOne, strike: strikethroughOne, reset: resetOne },
-                { btn: filterTwo, strike: strikethroughTwo, reset: resetTwo },
-                { btn: filterThree, strike: strikethroughThree, reset: resetThree },
-                { btn: filterFour, strike: strikethroughFour, reset: resetFour },
-                { btn: filterFive, strike: strikethroughFive, reset: resetFive },
-                { btn: filterSix, strike: strikethroughSix, reset: resetSix },
-                { btn: filterSeven, strike: strikethroughSeven, reset: resetSeven },
-                { btn: filterEight, strike: strikethroughEight, reset: resetEight },
-                { btn: filterNine, strike: strikethroughNine, reset: resetNine },
-                { btn: filterTen, strike: strikethroughTen, reset: resetTen },
-                { btn: filterEleven, strike: strikethroughEleven, reset: resetEleven },
-                { btn: filterTwelve, strike: strikethroughTwelve, reset: resetTwelve }
-            ];
-
-            filters.forEach(function(f) {
-                f.btn.style['text-decoration-line'] = 'none';
-                f.btn.removeEventListener('click', f.reset);
-                f.btn.removeEventListener('click', f.strike);
-                f.btn.addEventListener('click', f.strike);
+            filters.forEach(function(filter) {
+                filter.button.style['text-decoration-line'] = 'none';
+                filter.button.removeEventListener('click', filter.show);
+                filter.button.removeEventListener('click', filter.hide);
+                filter.button.addEventListener('click', filter.hide);
             });
         }
 
-        filterOne.addEventListener('click', strikethroughOne);
-        filterTwo.addEventListener('click', strikethroughTwo);
-        filterThree.addEventListener('click', strikethroughThree);
-        filterFour.addEventListener('click', strikethroughFour);
-        filterFive.addEventListener('click', strikethroughFive);
-        filterSix.addEventListener('click', strikethroughSix);
-        filterSeven.addEventListener('click', strikethroughSeven);
-        filterEight.addEventListener('click', strikethroughEight);
-        filterNine.addEventListener('click', strikethroughNine);
-        filterTen.addEventListener('click', strikethroughTen);
-        filterEleven.addEventListener('click', strikethroughEleven);
-        filterTwelve.addEventListener('click', strikethroughTwelve);
-        filterThirteen.addEventListener('click', showAllProjects);
+        document.getElementById('all-filter').addEventListener('click', showAllProjects);
 
     </script>
 
