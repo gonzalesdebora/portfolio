@@ -82,6 +82,15 @@ li {
     list-style-type: "✧  ";
 }
 
+/* A pale tint of the site's pink accent color, used to highlight the
+   "Projects" line in the resume so it stands out from the rest of the text.
+   width: fit-content keeps the background from stretching across the
+   full column, hugging just the text instead. */
+.projects {
+    background-color: #d6a3fb40;
+    width: fit-content;
+}
+
 a {
     font-weight: 300;
     color: inherit;
