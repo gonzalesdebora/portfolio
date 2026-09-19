@@ -82,8 +82,10 @@ li {
     list-style-type: "✧  ";
 }
 
-/* A pale tint of the site's pink accent color, used to highlight the
-   "Projects" line in the resume so it stands out from the rest of the text.
+/* A pale, semi-transparent tint of the site's pink accent color, used to
+   highlight the "Projects" line in the resume so it stands out from the
+   rest of the text. The last two digits of the color (40) set the
+   transparency, rather than using a fully solid color.
    width: fit-content keeps the background from stretching across the
    full column, hugging just the text instead. */
 .projects {
